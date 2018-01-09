@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_uye_anasayfa"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.idah.hyphen.uye_anasayfa"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/spn"
+            android:entries="@array/uyepaneli"/>
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@mipmap/geri"
+            android:layout_marginLeft="25dp"/>
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/anasayfa"
+            android:background="@mipmap/adres"
+            android:layout_marginLeft="15dp"/>
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/hsogeldin"
+            android:text="Hİ"
+            android:layout_marginLeft="45dp"
+            android:textAlignment="textEnd"
+            android:gravity="end" />
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/kullanici"
+            android:text=""
+            android:layout_marginLeft="10dp"/>
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@mipmap/cikis"
+            android:layout_marginLeft="35dp"
+            android:id="@+id/cikis" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+</LinearLayout>

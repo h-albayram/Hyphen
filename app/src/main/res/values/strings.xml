@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Hyphen</string>
+
+    <array name="admin">
+        <item></item>
+        <item>Profil</item>
+        <item>Üye İşlemleri</item>
+        <item>Takım Lideri</item>
+        <item>İş Veren</item>
+        <item>Görev İşlemleri</item>
+        <item>Duyuru</item>
+        <item>Mesaj</item>
+
+    </array>
+    <array name="yetki">
+        <item>Uye</item>
+        <item>Takim Lideri</item>
+        <item>İş Veren</item>
+
+    </array>
+    <array name="uyepaneli">
+        <item>Profil</item>
+        <item>Görevler</item>
+        <item>Duyurular</item>
+        <item>Mesaj</item>
+    </array>
+    <array name="takimllderi">
+        <item>Profil</item>
+        <item>Takım Üyeleri</item>
+        <item>Görev</item>
+        <item>Duyuru</item>
+        <item>Mesaj</item>
+    </array>
+    <array name="isverenpaneli">
+        <item>Profil</item>
+        <item>Duyuru</item>
+        <item>Mesaj</item>
+    </array>
+
+    <string name="title_activity_mesaj_islemleri">mesaj_islemleri</string>
+</resources>
