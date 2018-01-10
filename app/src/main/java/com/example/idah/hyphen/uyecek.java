@@ -60,7 +60,7 @@ public class uyecek {
     }
 
     public void setDog_tarihi(String dog_tarihi) {
-        this.soyadi = soyadi;
+        this.dog_tarihi = dog_tarihi;
     }
     public String getKay_tar() {
         return kay_tar;

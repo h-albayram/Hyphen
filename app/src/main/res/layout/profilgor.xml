@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <HorizontalScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ad:  "
+                    android:layout_weight="1"></TextView>
+                <TextView
+                    android:id="@+id/Ad"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    android:text="Adi:"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </LinearLayout>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_weight="1">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Soyad:  "
+        android:layout_weight="1"></TextView>
+    <TextView
+        android:id="@+id/Soyad"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+
+        android:layout_weight="1"
+        android:text="Soyad"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+</LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="sifre:  "
+                    android:layout_weight="1"></TextView>
+                <TextView
+                    android:id="@+id/Sifre"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    android:text="Sifre"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eposta:  "
+                    android:layout_weight="1"></TextView>
+                <TextView
+                    android:id="@+id/eposta"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    android:text="E posta"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Takim Adi:  "
+                    android:layout_weight="1"></TextView>
+                <TextView
+                    android:id="@+id/Takim"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+
+                    android:text="Takim"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Takim Kayit Tarihi:  "
+                    android:layout_weight="1"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/t_kayittar"
+                    android:text="Takim Kayit Tarihi"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kayit Tarihi:  "
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:id="@+id/kayittarihi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kayit tarihi"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
+</android.support.constraint.ConstraintLayout>

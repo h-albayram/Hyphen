@@ -5,5 +5,74 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.idah.hyphen.profil">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-</android.support.constraint.ConstraintLayout>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/spn"
+            android:layout_marginEnd="150dp"
+            android:entries="@array/admin"/>
+
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/anasayfa"
+            android:background="@mipmap/adres"
+            android:layout_marginLeft="15dp"/>
+
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@mipmap/cikis"
+            android:layout_marginLeft="35dp"
+            android:id="@+id/cikis" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:id="@+id/txt1"/>
+        <TextView
+            android:layout_width="75dp"
+            android:layout_height="15dp"
+            android:id="@+id/txt"
+            android:text="Profil Foto"
+            android:layout_marginStart="300dp"/>
+          <ImageView
+              android:layout_width="50dp"
+              android:layout_height="50dp"
+              android:id="@+id/foto"
+              android:layout_marginStart="300dp"/>
+        <TextView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:id="@+id/txt1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listprofil">
+
+        </ListView>
+    </LinearLayout>
+</LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>

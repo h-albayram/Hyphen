@@ -24,12 +24,12 @@ import org.json.JSONObject;
 
 public class uye_islemleri extends AppCompatActivity {
     RequestQueue requestQueue;
-    Button cikis;
-    Button anasayfa;
-    Spinner spn;
+
     Button show;
     ListView result;
-
+    Button cikis;
+    Button anasayfa;
+    Spinner spnr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +38,59 @@ public class uye_islemleri extends AppCompatActivity {
         uyecek.uyeler.clear();
         veritabani.GetUyler();
         result.setAdapter(new uyecekadapter(uye_islemleri.this, uyecek.uyeler));
+        cikis = (Button) findViewById(R.id.cikis);
+        anasayfa = (Button) findViewById(R.id.anasayfa);
+        spnr = (Spinner) findViewById(R.id.spn);
+        spnr.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                switch (position) {
+                    case 0:
 
+                        break;
+                    case 1:
+                        startActivity(new Intent(uye_islemleri.this, profil.class));
+                        break;
+                    case 2:
+                        startActivity(new Intent(uye_islemleri.this, uye_islemleri.class));
+                        break;
+                    case 3:
+                        startActivity(new Intent(uye_islemleri.this, tlislemleri.class));
+                        break;
+                    case 4:
+                        startActivity(new Intent(uye_islemleri.this, isveren_islemleri.class));
+                        break;
+                    case 5:
+                        startActivity(new Intent(uye_islemleri.this, gorev_islemleri.class));
+                        break;
+                    case 6:
+                        startActivity(new Intent(uye_islemleri.this, duyuru_islemleri.class));
+                        break;
+                    case 7:
+                        startActivity(new Intent(uye_islemleri.this, mesaj_islemleri.class));
+                        break;
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        cikis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(uye_islemleri.this, Hyphen.class));
+            }
+        });
+       anasayfa.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               startActivity(new Intent(uye_islemleri.this,admin_paneli.class));
+           }
+       });
 
     }
 }

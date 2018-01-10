@@ -61,23 +61,28 @@ public class Hyphen extends AppCompatActivity {
                 String sifre= editText.getText().toString();
                 veritabani vrtbn = new veritabani();
                 int mssg = vrtbn.Giris( mail,sifre);
+                uyecek uye = new uyecek();
                     if(mssg==1 || mssg==2 || mssg==3 || mssg ==4 ){
                     switch (mssg) {
                         case 1:
                         Toast.makeText(getApplicationContext(), "Giriş Başarılı", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(getApplicationContext(), admin_paneli.class));
+                        uye.setEmail(mail);
                         break;
                         case 2:
                             Toast.makeText(getApplicationContext(), "Giriş Başarılı", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(getApplicationContext(), uye_anasayfa.class));
+                            uye.setEmail(mail);
                             break;
                         case 3:
                             Toast.makeText(getApplicationContext(), "Giriş Başarılı", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(getApplicationContext(), takimlideri_paneli.class));
+                            uye.setEmail(mail);
                             break;
                         case 4:
                             Toast.makeText(getApplicationContext(), "Giriş Başarılı", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(getApplicationContext(), isveren_paneli.class));
+                            uye.setEmail(mail);
                             break;
 
                     }

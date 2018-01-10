@@ -11,53 +11,47 @@ class UyeGor {
     }
 
     public static ArrayList<UyeGor> listeUyeGor = new ArrayList<UyeGor>();
-    private int id;
-    private String k_adi;
-    private String k_soyad;
-    private String k_sifre;
-    private int k_tip;
+    private String sifre;
+    private String adi;
+    private String soyadi;
     private String email;
-    private Boolean kullanici_durum;
+    private String dog_tarihi;
+    private String kay_tar;
+    private  String takim_kaytar;
+    private String takim;
+    private String fotog;
 
 
-    public int getId() {
-        return id;
+    public String getAdi() {
+        return adi;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAdi(String k_adi) {
+        this.adi = k_adi;
     }
 
-    public String getK_adi() {
-        return k_adi;
+    public String getSoyadi() {
+        return soyadi;
     }
 
-    public void setK_adi(String k_adi) {
-        this.k_adi = k_adi;
+    public void setSoyadi(String k_soyad) {
+        this.soyadi = k_soyad;
     }
 
-    public String getK_soyad() {
-        return k_soyad;
+    public String getSifre() {
+        return sifre;
     }
 
-    public void setK_soyad(String k_soyad) {
-        this.k_soyad = k_soyad;
+    public void setSifre(String k_sifre) {
+        this.sifre = k_sifre;
     }
 
-    public String getK_sifre() {
-        return k_sifre;
+    public String getTakim() {
+        return takim;
     }
 
-    public void setK_sifre(String k_sifre) {
-        this.k_sifre = k_sifre;
-    }
-
-    public int getK_tip() {
-        return k_tip;
-    }
-
-    public void setK_tip(int k_tip) {
-        this.k_tip = k_tip;
+    public void setTakim(String takim) {
+        this.takim = takim;
     }
 
     public String getEmail() {
@@ -68,13 +62,37 @@ class UyeGor {
         this.email = email;
     }
 
-    public Boolean getKullanici_durum() {
-        return kullanici_durum;
+    public String getFotog() {
+        return fotog;
     }
 
-    public void setKullanici_durum(Boolean kullanici_durum) {
-        this.kullanici_durum = kullanici_durum;
+    public void setFotog(String fotog) {
+        this.fotog = fotog;
     }
+    public String getDog_tarihi() {
+        return dog_tarihi;
+    }
+
+    public void setDog_tarihi(String dog_tarihi) {
+        this.dog_tarihi = dog_tarihi;
+    }
+
+    public String getTakim_kaytar() {
+        return takim_kaytar;
+    }
+
+    public void setTakim_kaytar(String kay_tar) {
+        this.takim_kaytar = kay_tar;
+    }
+
+    public String getKay_tar() {
+        return kay_tar;
+    }
+
+    public void setKay_tar(String kay_tar) {
+        this.kay_tar = kay_tar;
+    }
+
 }
 
 class MusteriGor {

@@ -65,5 +65,11 @@ public class admin_paneli extends AppCompatActivity {
                 startActivity(new Intent(admin_paneli.this, Hyphen.class));
             }
         });
+        anasayfa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(admin_paneli.this,admin_paneli.class));
+            }
+        });
     }
 }

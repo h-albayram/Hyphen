@@ -67,9 +67,10 @@ public class uyecekadapter extends BaseAdapter {
             public void onClick(View view) {
                 Listuyeler.remove(position); //or some other task
                 veritabani webServis = new veritabani();
-              //  donus = webServis.CevirmenSil(Email.getText().toString());
-              //  Toast.makeText(activity, "" + donus, Toast.LENGTH_LONG).show();
-               // notifyDataSetChanged();
+                String donus;
+               donus = webServis.uyesil(Email.getText().toString());
+               Toast.makeText(activity, "" + donus, Toast.LENGTH_LONG).show();
+               notifyDataSetChanged();
             }
         });
 
