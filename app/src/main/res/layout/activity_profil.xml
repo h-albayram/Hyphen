@@ -20,7 +20,8 @@
             android:layout_weight="1"
             android:id="@+id/spn"
             android:layout_marginEnd="150dp"
-            android:entries="@array/admin"/>
+            android:entries="@array/admin"
+            android:layout_marginRight="150dp" />
 
         <Button
             android:layout_width="35dp"
@@ -50,16 +51,18 @@
             android:layout_height="15dp"
             android:id="@+id/txt"
             android:text="Profil Foto"
-            android:layout_marginStart="300dp"/>
+            android:layout_marginStart="300dp"
+            android:layout_marginLeft="300dp" />
           <ImageView
               android:layout_width="50dp"
               android:layout_height="50dp"
               android:id="@+id/foto"
-              android:layout_marginStart="300dp"/>
+              android:layout_marginStart="300dp"
+              android:layout_marginLeft="300dp" />
         <TextView
             android:layout_width="10dp"
             android:layout_height="10dp"
-            android:id="@+id/txt1"/>
+            android:id="@+id/txt2"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

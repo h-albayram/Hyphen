@@ -48,22 +48,22 @@ public class profiladapter extends BaseAdapter{
         View satirView;
         satirView = mInflater.inflate(R.layout.profilgor, parent, false);
 
-        TextView Adi = (TextView) satirView.findViewById(R.id.Ad);
-        TextView Soyad = (TextView) satirView.findViewById(R.id.Soyad);
-        TextView Sifre = (TextView) satirView.findViewById(R.id.Sifre);
-        TextView eposta = (TextView) satirView.findViewById(R.id.eposta);
-        final TextView takim = (TextView) satirView.findViewById(R.id.Takim);
-        TextView kayit_tar = (TextView) satirView.findViewById(R.id.kayittarihi);
-        TextView takim_kayit=(TextView)satirView.findViewById(R.id.t_kayittar);
+        TextView Adi = (TextView) satirView.findViewById(R.id.P_Ad);
+        TextView Soyad = (TextView) satirView.findViewById(R.id.P_Soyad);
+        TextView Sifre = (TextView) satirView.findViewById(R.id.P_Sifre);
+        TextView eposta = (TextView) satirView.findViewById(R.id.P_eposta);
+        final TextView takim = (TextView) satirView.findViewById(R.id.P_Takim);
+        TextView kayit_tar = (TextView) satirView.findViewById(R.id.P_kayittarihi);
+        TextView takim_kayit=(TextView)satirView.findViewById(R.id.P_t_kayittar);
 
         final UyeGor u = UyeGor.listeUyeGor.get(position);
         Adi.setText(""+u.getAdi().toString());
         Soyad.setText(""+u.getSoyadi().toString());
         Sifre.setText(""+u.getSifre().toString());
         eposta.setText(""+u.getEmail().toString());
-        takim.setText(""+u.getTakim().toString());
-        takim_kayit.setText(""+u.getTakim_kaytar().toString());
-        kayit_tar.setText(""+u.getKay_tar().toString());
+        takim.setText(""+u.getTakim());
+        takim_kayit.setText(""+u.getTakim_kaytar());
+        kayit_tar.setText(""+u.getKay_tar());
 
 
         return satirView;

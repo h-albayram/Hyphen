@@ -127,14 +127,20 @@ public class veritabani {
             e.printStackTrace();
         }
     }
-    public static void profil(String mail) {
+    public static void profil(String email) {
         String nameSpace = "profil";
-        List<Pair<String, Object>> listKeys = new ArrayList<>();
-        SoapSerializationEnvelope envelope = startProcess(nameSpace, listKeys, false);
+        SoapObject request = new SoapObject(NAMESPACE, nameSpace);
+        request.addProperty("mail", email);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+        envelope.setOutputSoapObject(request);
+        envelope.dotNet = true;
         HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
         androidHttpTransport.debug = true;
+
         try {
-            androidHttpTransport.call("http://microsoft.com/webservices/" + nameSpace, envelope);
+            androidHttpTransport.call("http://microsoft.com/webservices/"+nameSpace, envelope);
             SoapObject response = (SoapObject) envelope.getResponse();
             response = (SoapObject) response.getProperty(1);
             SoapObject table = (SoapObject) response.getProperty(0);
@@ -142,14 +148,13 @@ public class veritabani {
             for (int i = 0; i < table.getPropertyCount(); i++) {
                 SoapObject tableRow = (SoapObject) table.getProperty(i);
                 UyeGor uyeler = new UyeGor();
-
                 uyeler.setSifre(""+(tableRow.getPropertyAsString("sifre").toString()));
                 uyeler.setAdi(""+tableRow.getPropertyAsString("ad").toString());
                 uyeler.setSoyadi(""+tableRow.getPropertyAsString("soyad").toString());
                 uyeler.setEmail(""+tableRow.getPropertyAsString("e_posta").toString());
                 uyeler.setDog_tarihi(""+tableRow.getPropertyAsString("dog_tar").toString());
                 uyeler.setKay_tar(""+tableRow.getPropertyAsString("kayit_tar").toString());
-                uyeler.setTakim_kaytar(""+tableRow.getPropertyAsString("takim_kay_tar").toString());
+              //  uyeler.setTakim_kaytar(""+tableRow.getPropertyAsString("takim_kay_tar").toString());
                 //   uyeler.setTakim(""+(tableRow.getPropertyAsString("takim_id").toString()));
                 UyeGor.listeUyeGor.add(uyeler);
             }
@@ -161,7 +166,7 @@ public class veritabani {
         String donus ="";
         SoapObject request = new SoapObject(NAMESPACE, "uyesil");
 
-        request.addProperty("e_posta", mail);
+        request.addProperty("mail", mail);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);

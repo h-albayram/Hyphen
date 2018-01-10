@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <HorizontalScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
@@ -10,20 +11,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ad:  "
-                    android:layout_weight="1"></TextView>
+                    android:layout_weight="1"
+                    android:text="Ad:  "></TextView>
+
                 <TextView
-                    android:id="@+id/Ad"
+                    android:id="@+id/P_Ad"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
 
@@ -33,37 +36,42 @@
             </LinearLayout>
 
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_weight="1">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Soyad:  "
-        android:layout_weight="1"></TextView>
-    <TextView
-        android:id="@+id/Soyad"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-
-        android:layout_weight="1"
-        android:text="Soyad"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-</LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="sifre:  "
-                    android:layout_weight="1"></TextView>
+                    android:layout_weight="1"
+                    android:text="Soyad:  "></TextView>
+
                 <TextView
-                    android:id="@+id/Sifre"
+                    android:id="@+id/P_Soyad"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    android:text="Soyad"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="sifre:  "></TextView>
+
+                <TextView
+                    android:id="@+id/P_Sifre"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
 
@@ -75,15 +83,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Eposta:  "
-                    android:layout_weight="1"></TextView>
+                    android:layout_weight="1"
+                    android:text="Eposta:  "></TextView>
+
                 <TextView
-                    android:id="@+id/eposta"
+                    android:id="@+id/P_eposta"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
 
@@ -95,20 +105,22 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Takim Adi:  "
-                    android:layout_weight="1"></TextView>
+                    android:layout_weight="1"
+                    android:text="Takim Adi:  "></TextView>
+
                 <TextView
-                    android:id="@+id/Takim"
+                    android:id="@+id/P_Takim"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
 
+                    android:layout_weight="1"
                     android:text="Takim"
-                    android:layout_weight="1"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
             </LinearLayout>
 
@@ -116,44 +128,43 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Takim Kayit Tarihi:  "
-                    android:layout_weight="1"></TextView>
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/t_kayittar"
-                    android:text="Takim Kayit Tarihi"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:text="Takim Kayit Tarihi:  "></TextView>
+
+                <TextView
+                    android:id="@+id/P_t_kayittar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Takim Kayit Tarihi" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Kayit Tarihi:  "
                     android:layout_weight="1"
-                    />
+                    android:text="Kayit Tarihi:  " />
+
                 <TextView
-                    android:id="@+id/kayittarihi"
+                    android:id="@+id/P_kayittarihi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Kayit tarihi"
-                    android:layout_weight="1"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
             </LinearLayout>
-
-
-
 
 
         </LinearLayout>

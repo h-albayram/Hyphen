@@ -14,18 +14,19 @@ public class profil extends AppCompatActivity {
     Button cikis;
     Button anasayfa;
     Spinner spnr;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
-        result=(ListView)findViewById(R.id.listprofil) ;
+        result = (ListView) findViewById(R.id.listprofil);
         cikis = (Button) findViewById(R.id.cikis);
         anasayfa = (Button) findViewById(R.id.anasayfa);
         spnr = (Spinner) findViewById(R.id.spn);
-        UyeGor uye= new UyeGor();
-        uye.listeUyeGor.clear();
-        String mail=uye.getEmail().toString();
-        veritabani.profil(mail);
+        UyeGor uye = new UyeGor();
+        UyeGor.listeUyeGor.clear();
+       String mail ="albayramidah@gmail.com";
+        veritabani.profil(mail.trim().toString());
         result.setAdapter(new profiladapter(profil.this, uye.listeUyeGor));
         spnr.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -33,8 +34,8 @@ public class profil extends AppCompatActivity {
 
                 switch (position) {
                     case 0:
-
                         break;
+
                     case 1:
                         startActivity(new Intent(profil.this, profil.class));
                         break;
@@ -74,7 +75,7 @@ public class profil extends AppCompatActivity {
         anasayfa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(profil.this,admin_paneli.class));
+                startActivity(new Intent(profil.this, admin_paneli.class));
             }
         });
 
