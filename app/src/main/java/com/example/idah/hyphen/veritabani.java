@@ -47,7 +47,7 @@ public class veritabani {
         request.addProperty("sifre", sifre);
         request.addProperty("ad", ad);
         request.addProperty("soyad", soyad);
-        request.addProperty("email", email);
+        request.addProperty("e_posta", email);
         request.addProperty("dog_tar", dogtar);
         request.addProperty("yetki", yetki);
         request.addProperty("foto", foto);
@@ -187,5 +187,32 @@ public class veritabani {
         }
         return donus;
     }
+    public String mesajekle(String gonderenemail, String aliciemail,String mesajkonusu,String mesajicerigi) {
+        String donus = "";
+        SoapObject request = new SoapObject(NAMESPACE, "mesajekle");
 
+        request.addProperty("gonderen_mail", gonderenemail);
+        request.addProperty("alici_mail", aliciemail);
+        request.addProperty("mesaj_basligi", mesajkonusu);
+        request.addProperty("mesaj", mesajicerigi);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+        envelope.setOutputSoapObject(request);
+        envelope.dotNet = true;
+        HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
+        androidHttpTransport.debug = true;
+        try {
+            androidHttpTransport.call("http://microsoft.com/webservices/mesajekle", envelope);
+            SoapPrimitive response = (SoapPrimitive) envelope.getResponse();
+            response = (SoapPrimitive) envelope.getResponse();
+
+            donus = response.toString();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+        return donus;
+    }
 }

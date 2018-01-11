@@ -19,6 +19,7 @@
 
     </array>
     <array name="uyepaneli">
+        <item></item>
         <item>Profil</item>
         <item>Görevler</item>
         <item>Duyurular</item>
@@ -32,6 +33,7 @@
         <item>Mesaj</item>
     </array>
     <array name="isverenpaneli">
+        <item></item>
         <item>Profil</item>
         <item>Duyuru</item>
         <item>Mesaj</item>

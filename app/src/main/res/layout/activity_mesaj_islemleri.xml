@@ -39,20 +39,49 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:text="Mesaj Yaz"
-            android:id="@+id/mesajyaz"
-            />
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/alicimail"
+                android:hint="Göndermek istenilen eposta"/>
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt1"
+                android:hint="Mesaj Konusu"/>
+            <MultiAutoCompleteTextView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/mlttext"
+                android:hint="Göndermek istediğiniz mesajı giriniz"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="Mesaj Gönder"
+                android:id="@+id/mesajyaz"
+                />
+        </LinearLayout>
 
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:text="Gelen Kutusu"
-            android:id="@+id/gelenmesaj"
-            />
+
     </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lst"></ListView>
+        </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

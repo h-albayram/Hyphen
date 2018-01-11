@@ -20,7 +20,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Ad:  "></TextView>
@@ -43,10 +43,10 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="82dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Soyad:  "></TextView>
+                    android:text="Soyad:"></TextView>
 
                 <TextView
                     android:id="@+id/P_Soyad"
@@ -65,7 +65,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="sifre:  "></TextView>
@@ -87,14 +87,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Eposta:  "></TextView>
 
                 <TextView
                     android:id="@+id/P_eposta"
-                    android:layout_width="100dp"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
 
                     android:layout_weight="1"
@@ -109,7 +109,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Takim Adi:  "></TextView>

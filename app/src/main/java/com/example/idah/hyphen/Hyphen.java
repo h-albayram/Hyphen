@@ -63,26 +63,35 @@ public class Hyphen extends AppCompatActivity {
                 int mssg = vrtbn.Giris( mail,sifre);
                 uyecek uye = new uyecek();
                     if(mssg==1 || mssg==2 || mssg==3 || mssg ==4 ){
+
                     switch (mssg) {
                         case 1:
                         Toast.makeText(getApplicationContext(), "Giriş Başarılı", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(getApplicationContext(), admin_paneli.class));
-                        uye.setEmail(mail);
+                            Intent intent = new Intent(Hyphen.this, admin_paneli.class);
+                            intent.putExtra("email",mail);
+                            startActivity(intent);
                         break;
                         case 2:
                             Toast.makeText(getApplicationContext(), "Giriş Başarılı", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(getApplicationContext(), uye_anasayfa.class));
-                            uye.setEmail(mail);
+                            Intent intent1 = new Intent(Hyphen.this, uye_anasayfa.class);
+                            intent1.putExtra("email",mail);
+                            startActivity(intent1);
                             break;
                         case 3:
                             Toast.makeText(getApplicationContext(), "Giriş Başarılı", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(getApplicationContext(), takimlideri_paneli.class));
-                            uye.setEmail(mail);
+                            Intent intent2 = new Intent(Hyphen.this, takimlideri_paneli.class);
+                            intent2.putExtra("email",mail);
+                            startActivity(intent2);
                             break;
                         case 4:
                             Toast.makeText(getApplicationContext(), "Giriş Başarılı", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(getApplicationContext(), isveren_paneli.class));
-                            uye.setEmail(mail);
+                            Intent intent3 = new Intent(Hyphen.this, isveren_paneli.class);
+                            intent3.putExtra("email",mail);
+                            startActivity(intent3);
                             break;
 
                     }

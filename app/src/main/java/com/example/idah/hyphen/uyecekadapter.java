@@ -50,7 +50,7 @@ public class uyecekadapter extends BaseAdapter {
         TextView Adi = (TextView) satirView.findViewById(R.id.Ad);
         TextView Soyad = (TextView) satirView.findViewById(R.id.Soyad);
         TextView Sifre = (TextView) satirView.findViewById(R.id.Sifre);
-        TextView Tipi = (TextView) satirView.findViewById(R.id.eposta);
+       final TextView Tipi = (TextView) satirView.findViewById(R.id.eposta);
         final TextView Email = (TextView) satirView.findViewById(R.id.yetki);
         TextView Kullanici_Durum = (TextView) satirView.findViewById(R.id.kayittarihi);
         final uyecek u = uyecek.uyeler.get(position);
@@ -68,7 +68,8 @@ public class uyecekadapter extends BaseAdapter {
                 Listuyeler.remove(position); //or some other task
                 veritabani webServis = new veritabani();
                 String donus;
-               donus = webServis.uyesil(Email.getText().toString());
+                String mail=Tipi.getText().toString();
+               donus = webServis.uyesil(mail);
                Toast.makeText(activity, "" + donus, Toast.LENGTH_LONG).show();
                notifyDataSetChanged();
             }

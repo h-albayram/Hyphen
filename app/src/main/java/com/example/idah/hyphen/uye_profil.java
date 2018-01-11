@@ -8,30 +8,27 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
 
+public class uye_profil extends AppCompatActivity {
 
-public class isveren_paneli extends AppCompatActivity {
-
-    Button cikis;
-    Button anasayfa;
+    Button cikis,anasayfa;
     Spinner spn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_isveren_paneli);
+        setContentView(R.layout.activity_uye_profil);
         cikis = (Button) findViewById(R.id.cikis);
         anasayfa = (Button) findViewById(R.id.anasayfa);
         spn = (Spinner) findViewById(R.id.spn);
-        anasayfa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(isveren_paneli.this, isveren_paneli.class));
-            }
-        });
         cikis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(isveren_paneli.this, Hyphen.class));
+                startActivity(new Intent(uye_profil.this, Hyphen.class));
+            }
+        });
+        anasayfa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(uye_profil.this, uye_anasayfa.class));
             }
         });
         spn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -42,15 +39,17 @@ public class isveren_paneli extends AppCompatActivity {
 
                         break;
                     case 1:
-                        startActivity(new Intent(isveren_paneli.this, isveren_profil.class));
+                        startActivity(new Intent(uye_profil.this, uye_profil.class));
                         break;
                     case 2:
-                        startActivity(new Intent(isveren_paneli.this, isveren_duyuru.class));
+                        startActivity(new Intent(uye_profil.this, uye_gorev.class));
                         break;
                     case 3:
-                        startActivity(new Intent(isveren_paneli.this, isveren_mesaj.class));
+                        startActivity(new Intent(uye_profil.this, uye_duyuru.class));
                         break;
-
+                    case 4:
+                        startActivity(new Intent(uye_profil.this, uye_mesaj.class));
+                        break;
                 }
             }
 
@@ -59,6 +58,5 @@ public class isveren_paneli extends AppCompatActivity {
 
             }
         });
-
     }
 }

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.idah.hyphen">
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,11 +30,14 @@
         <activity android:name=".gorev_islemleri" />
         <activity android:name=".isveren_islemleri" />
         <activity android:name=".profil" />
-        <activity android:name=".gorevler">
-
-        </activity>
-
-
+        <activity android:name=".gorevler" />
+        <activity android:name=".isveren_profil" />
+        <activity android:name=".isveren_duyuru" />
+        <activity android:name=".isveren_mesaj" />
+        <activity android:name=".uye_profil" />
+        <activity android:name=".uye_gorev" />
+        <activity android:name=".uye_duyuru" />
+        <activity android:name=".uye_mesaj"></activity>
     </application>
 
 </manifest>

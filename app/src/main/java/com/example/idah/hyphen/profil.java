@@ -14,6 +14,7 @@ public class profil extends AppCompatActivity {
     Button cikis;
     Button anasayfa;
     Spinner spnr;
+    String gelenemail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +26,10 @@ public class profil extends AppCompatActivity {
         spnr = (Spinner) findViewById(R.id.spn);
         UyeGor uye = new UyeGor();
         UyeGor.listeUyeGor.clear();
+        Bundle extras = getIntent().getExtras();
+        gelenemail = extras.getString("email");
        String mail ="albayramidah@gmail.com";
-        veritabani.profil(mail.trim().toString());
+        veritabani.profil(gelenemail.trim().toString());
         result.setAdapter(new profiladapter(profil.this, uye.listeUyeGor));
         spnr.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

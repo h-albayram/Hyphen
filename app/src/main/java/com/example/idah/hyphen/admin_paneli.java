@@ -13,7 +13,7 @@ public class admin_paneli extends AppCompatActivity {
     Button cikis;
     Button anasayfa;
     Spinner spnr;
-
+    String gelenemail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,10 @@ public class admin_paneli extends AppCompatActivity {
         cikis = (Button) findViewById(R.id.cikis);
         anasayfa = (Button) findViewById(R.id.anasayfa);
         spnr = (Spinner) findViewById(R.id.spn);
+        Bundle extras = getIntent().getExtras();
+        gelenemail = extras.getString("email");
+
+
         spnr.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -31,6 +35,9 @@ public class admin_paneli extends AppCompatActivity {
                         break;
                     case 1:
                         startActivity(new Intent(admin_paneli.this, profil.class));
+                        Intent intent = new Intent(admin_paneli.this, profil.class);
+                        intent.putExtra("email",gelenemail);
+                        startActivity(intent);
                         break;
                     case 2:
                         startActivity(new Intent(admin_paneli.this, uye_islemleri.class));
@@ -49,6 +56,9 @@ public class admin_paneli extends AppCompatActivity {
                         break;
                     case 7:
                         startActivity(new Intent(admin_paneli.this, mesaj_islemleri.class));
+                        Intent intent1 = new Intent(admin_paneli.this, mesaj_islemleri.class);
+                        intent1.putExtra("email",gelenemail);
+                        startActivity(intent1);
                         break;
 
                 }
