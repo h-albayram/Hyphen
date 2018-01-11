@@ -12,7 +12,7 @@ public class uye_anasayfa extends AppCompatActivity {
     Button cikis;
     Button anasayfa;
     Spinner spn;
-
+    String gelenemail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +20,8 @@ public class uye_anasayfa extends AppCompatActivity {
         cikis = (Button) findViewById(R.id.cikis);
         anasayfa = (Button) findViewById(R.id.anasayfa);
         spn = (Spinner) findViewById(R.id.spn);
+        Bundle extras = getIntent().getExtras();
+        gelenemail = extras.getString("email");
         cikis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +43,9 @@ public class uye_anasayfa extends AppCompatActivity {
                         break;
                     case 1:
                         startActivity(new Intent(uye_anasayfa.this, uye_profil.class));
+                        Intent intent = new Intent(uye_anasayfa.this, uye_profil.class);
+                        intent.putExtra("email",gelenemail);
+                        startActivity(intent);
                         break;
                     case 2:
                         startActivity(new Intent(uye_anasayfa.this, uye_gorev.class));
@@ -50,6 +55,10 @@ public class uye_anasayfa extends AppCompatActivity {
                         break;
                     case 4:
                         startActivity(new Intent(uye_anasayfa.this, uye_mesaj.class));
+                        startActivity(new Intent(uye_anasayfa.this, uye_mesaj.class));
+                        Intent intent1 = new Intent(uye_anasayfa.this, uye_mesaj.class);
+                        intent1.putExtra("email",gelenemail);
+                        startActivity(intent1);
                         break;
                 }
             }

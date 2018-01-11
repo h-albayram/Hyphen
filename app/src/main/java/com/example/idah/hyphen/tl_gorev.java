@@ -8,8 +8,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
 
-public class takimlideri_paneli extends AppCompatActivity {
-
+public class tl_gorev extends AppCompatActivity {
     Button cikis;
     Button anasayfa;
     Spinner spnr;
@@ -17,7 +16,7 @@ public class takimlideri_paneli extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_takimlideri_paneli);
+        setContentView(R.layout.activity_tl_gorev);
         cikis = (Button) findViewById(R.id.cikis);
         anasayfa = (Button) findViewById(R.id.anasayfa);
         spnr = (Spinner) findViewById(R.id.spn);
@@ -34,24 +33,24 @@ public class takimlideri_paneli extends AppCompatActivity {
 
                         break;
                     case 1:
-                        startActivity(new Intent(takimlideri_paneli.this, tl_profil.class));
-                        Intent intent = new Intent(takimlideri_paneli.this, tl_profil.class);
+                        startActivity(new Intent(tl_gorev.this, tl_profil.class));
+                        Intent intent = new Intent(tl_gorev.this, tl_profil.class);
                         intent.putExtra("email",gelenemail);
                         startActivity(intent);
                         break;
 
                     case 2:
-                        startActivity(new Intent(takimlideri_paneli.this, tl_takim.class));
+                        startActivity(new Intent(tl_gorev.this, tl_takim.class));
                         break;
                     case 3:
-                        startActivity(new Intent(takimlideri_paneli.this, tl_gorev.class));
+                        startActivity(new Intent(tl_gorev.this, tl_gorev.class));
                         break;
                     case 4:
-                        startActivity(new Intent(takimlideri_paneli.this, tl_duyuru.class));
+                        startActivity(new Intent(tl_gorev.this, tl_duyuru.class));
                         break;
                     case 5:
-                        startActivity(new Intent(takimlideri_paneli.this, tl_mesaj.class));
-                        Intent intent1 = new Intent(takimlideri_paneli.this, tl_mesaj.class);
+                        startActivity(new Intent(tl_gorev.this, tl_mesaj.class));
+                        Intent intent1 = new Intent(tl_gorev.this, tl_mesaj.class);
                         intent1.putExtra("email",gelenemail);
                         startActivity(intent1);
                         break;
@@ -67,13 +66,13 @@ public class takimlideri_paneli extends AppCompatActivity {
         cikis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(takimlideri_paneli.this, Hyphen.class));
+                startActivity(new Intent(tl_gorev.this, Hyphen.class));
             }
         });
         anasayfa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(takimlideri_paneli.this,takimlideri_paneli.class));
+                startActivity(new Intent(tl_gorev.this,takimlideri_paneli.class));
             }
         });
     }

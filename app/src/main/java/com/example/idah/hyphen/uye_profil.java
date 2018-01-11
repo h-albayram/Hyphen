@@ -6,12 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Spinner;
 
 public class uye_profil extends AppCompatActivity {
 
     Button cikis,anasayfa;
     Spinner spn;
+    String gelenemail;
+    ListView prof;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +22,13 @@ public class uye_profil extends AppCompatActivity {
         cikis = (Button) findViewById(R.id.cikis);
         anasayfa = (Button) findViewById(R.id.anasayfa);
         spn = (Spinner) findViewById(R.id.spn);
+        prof=(ListView)findViewById(R.id.listprofil) ;
+        Bundle extras = getIntent().getExtras();
+        gelenemail = extras.getString("email");
+        UyeGor uye = new UyeGor();
+        UyeGor.listeUyeGor.clear();
+        veritabani.profil(gelenemail.trim().toString());
+        prof.setAdapter(new profiladapter(uye_profil.this, uye.listeUyeGor));
         cikis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,6 +50,9 @@ public class uye_profil extends AppCompatActivity {
                         break;
                     case 1:
                         startActivity(new Intent(uye_profil.this, uye_profil.class));
+                        Intent intent = new Intent(uye_profil.this, uye_profil.class);
+                        intent.putExtra("email",gelenemail);
+                        startActivity(intent);
                         break;
                     case 2:
                         startActivity(new Intent(uye_profil.this, uye_gorev.class));

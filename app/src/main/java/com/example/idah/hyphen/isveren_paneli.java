@@ -14,7 +14,7 @@ public class isveren_paneli extends AppCompatActivity {
     Button cikis;
     Button anasayfa;
     Spinner spn;
-
+    String gelenemail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +22,8 @@ public class isveren_paneli extends AppCompatActivity {
         cikis = (Button) findViewById(R.id.cikis);
         anasayfa = (Button) findViewById(R.id.anasayfa);
         spn = (Spinner) findViewById(R.id.spn);
+        Bundle extras = getIntent().getExtras();
+        gelenemail = extras.getString("email");
         anasayfa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,12 +45,18 @@ public class isveren_paneli extends AppCompatActivity {
                         break;
                     case 1:
                         startActivity(new Intent(isveren_paneli.this, isveren_profil.class));
+                        Intent intent = new Intent(isveren_paneli.this, isveren_profil.class);
+                        intent.putExtra("email",gelenemail);
+                        startActivity(intent);
                         break;
                     case 2:
                         startActivity(new Intent(isveren_paneli.this, isveren_duyuru.class));
                         break;
                     case 3:
                         startActivity(new Intent(isveren_paneli.this, isveren_mesaj.class));
+                        Intent intent1 = new Intent(isveren_paneli.this, isveren_mesaj.class);
+                        intent1.putExtra("email",gelenemail);
+                        startActivity(intent1);
                         break;
 
                 }
