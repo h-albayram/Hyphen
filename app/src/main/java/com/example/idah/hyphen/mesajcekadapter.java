@@ -57,7 +57,7 @@ public class mesajcekadapter extends BaseAdapter {
         Soyad.setText(""+u.getK_soyad().toString());
         mesajkonusu.setText(""+u.getMesajbasligi().toString());
         mesaj1.setText(""+u.getMesaj().toString());
-        tarih.setText(""+u.getTarih());
+       // tarih.setText(""+String.valueOf(u.getTarih()));
 
 
 

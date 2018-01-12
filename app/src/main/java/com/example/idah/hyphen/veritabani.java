@@ -247,7 +247,7 @@ public class veritabani {
     }
 
     public static void mesajcek(String email) {
-        String nameSpace = "gelenmesaj";
+        String nameSpace = "gelenmsg";
         SoapObject request = new SoapObject(NAMESPACE, nameSpace);
         request.addProperty("mail", email);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -259,7 +259,7 @@ public class veritabani {
         androidHttpTransport.debug = true;
 
         try {
-            androidHttpTransport.call("http://microsoft.com/webservices/" + nameSpace, envelope);
+            androidHttpTransport.call("http://microsoft.com/webservices/"+nameSpace, envelope);
             SoapObject response = (SoapObject) envelope.getResponse();
             response = (SoapObject) response.getProperty(1);
             SoapObject table = (SoapObject) response.getProperty(0);

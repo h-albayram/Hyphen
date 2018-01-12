@@ -35,7 +35,7 @@ public class mesaj_islemleri extends AppCompatActivity {
         gelenemail = extras.getString("email");
         mesajgor mesj= new mesajgor();
         mesajgor.mesajgorArrayList.clear();
-        veritabani.profil(gelenemail.trim().toString());
+       // veritabani.profil(gelenemail.trim().toString());
         veritabani.mesajcek(gelenemail.trim().toString());
         lstv.setAdapter(new mesajcekadapter(mesaj_islemleri.this, mesj.mesajgorArrayList));
         mesajyaz.setOnClickListener(new View.OnClickListener() {
