@@ -16,6 +16,7 @@ public class mesaj_islemleri extends AppCompatActivity {
     Spinner spnr;
     EditText mesajkonusu,aliciemail;
     MultiAutoCompleteTextView mesajicerigi;
+    String gelenemail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +33,8 @@ public class mesaj_islemleri extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Bundle extras = getIntent().getExtras();
-              String  gelenemail = extras.getString("email");
-              String alicimail=aliciemail.getText().toString();
+                gelenemail = extras.getString("email");
+              String alicimail=aliciemail.getText().toString().trim();
               String mesajkonus=mesajkonusu.getText().toString();
               String mesaj=mesajicerigi.getText().toString();
                 veritabani vrtbn = new veritabani();
@@ -51,24 +52,42 @@ public class mesaj_islemleri extends AppCompatActivity {
                         break;
                     case 1:
                         startActivity(new Intent(mesaj_islemleri.this, profil.class));
+                        Intent intent = new Intent(mesaj_islemleri.this, profil.class);
+                        intent.putExtra("email",gelenemail);
+                        startActivity(intent);
                         break;
                     case 2:
                         startActivity(new Intent(mesaj_islemleri.this, uye_islemleri.class));
                         break;
                     case 3:
                         startActivity(new Intent(mesaj_islemleri.this, tlislemleri.class));
+                        Intent intent2 = new Intent(mesaj_islemleri.this, tlislemleri.class);
+                        intent2.putExtra("email",gelenemail);
+                        startActivity(intent2);
                         break;
                     case 4:
                         startActivity(new Intent(mesaj_islemleri.this, isveren_islemleri.class));
+                        Intent intent3 = new Intent(mesaj_islemleri.this, isveren_islemleri.class);
+                        intent3.putExtra("email",gelenemail);
+                        startActivity(intent3);
                         break;
                     case 5:
                         startActivity(new Intent(mesaj_islemleri.this, gorev_islemleri.class));
+                        Intent intent4 = new Intent(mesaj_islemleri.this, gorev_islemleri.class);
+                        intent4.putExtra("email",gelenemail);
+                        startActivity(intent4);
                         break;
                     case 6:
                         startActivity(new Intent(mesaj_islemleri.this, duyuru_islemleri.class));
+                        Intent intent6 = new Intent(mesaj_islemleri.this, duyuru_islemleri.class);
+                        intent6.putExtra("email",gelenemail);
+                        startActivity(intent6);
                         break;
                     case 7:
                         startActivity(new Intent(mesaj_islemleri.this, mesaj_islemleri.class));
+                        Intent intent5 = new Intent(mesaj_islemleri.this, mesaj_islemleri.class);
+                        intent5.putExtra("email",gelenemail);
+                        startActivity(intent5);
                         break;
 
                 }
