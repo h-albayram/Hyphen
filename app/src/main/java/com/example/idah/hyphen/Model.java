@@ -269,30 +269,22 @@ class İlanGor {
 
 }
 
-class CevirmenAra {
+class mesajgor {
 
 
-    public CevirmenAra() {
+    public mesajgor() {
         super();
     }
 
-    public static ArrayList<CevirmenAra> listeCevirmenAra = new ArrayList<CevirmenAra>();
-    private int id;
+    public static ArrayList<mesajgor> mesajgorArrayList = new ArrayList<mesajgor>();
+
     private String k_adi;
     private String k_soyad;
-    private String k_sifre;
-    private int k_tip;
-    private String email;
-    private Boolean kullanici_durum;
+    private String mesajbasligi;
+    private String mesaj;
+    private String tarih;
 
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getK_adi() {
         return k_adi;
@@ -310,37 +302,33 @@ class CevirmenAra {
         this.k_soyad = k_soyad;
     }
 
-    public String getK_sifre() {
-        return k_sifre;
+    public String getMesajbasligi() {
+        return mesajbasligi;
     }
 
-    public void setK_sifre(String k_sifre) {
-        this.k_sifre = k_sifre;
+    public void setMesajbasligi(String mesajbasligi) {
+        this.mesajbasligi = mesajbasligi;
     }
 
-    public int getK_tip() {
-        return k_tip;
+    public String getMesaj() {
+        return mesaj;
     }
 
-    public void setK_tip(int k_tip) {
-        this.k_tip = k_tip;
+    public void setMesaj(String mesaj) {
+        this.mesaj = mesaj;
     }
 
-    public String getEmail() {
-        return email;
+    public String getTarih() {
+        return tarih;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setTarih(String tarih) {
+        this.tarih = tarih;
     }
 
-    public Boolean getKullanici_durum() {
-        return kullanici_durum;
-    }
 
-    public void setKullanici_durum(Boolean kullanici_durum) {
-        this.kullanici_durum = kullanici_durum;
-    }
+
+
 }
 
 class UyeAra {

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -17,7 +18,7 @@ public class mesaj_islemleri extends AppCompatActivity {
     EditText mesajkonusu,aliciemail;
     MultiAutoCompleteTextView mesajicerigi;
     String gelenemail;
-
+    ListView lstv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,11 +30,18 @@ public class mesaj_islemleri extends AppCompatActivity {
         anasayfa = (Button) findViewById(R.id.anasayfa);
         spnr = (Spinner) findViewById(R.id.spn);
         mesajyaz = (Button) findViewById(R.id.mesajyaz);
+        lstv=(ListView)findViewById(R.id.lst1) ;
+        Bundle extras = getIntent().getExtras();
+        gelenemail = extras.getString("email");
+        mesajgor mesj= new mesajgor();
+        mesajgor.mesajgorArrayList.clear();
+        veritabani.profil(gelenemail.trim().toString());
+        veritabani.mesajcek(gelenemail.trim().toString());
+        lstv.setAdapter(new mesajcekadapter(mesaj_islemleri.this, mesj.mesajgorArrayList));
         mesajyaz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle extras = getIntent().getExtras();
-                gelenemail = extras.getString("email");
+
               String alicimail=aliciemail.getText().toString().trim();
               String mesajkonus=mesajkonusu.getText().toString();
               String mesaj=mesajicerigi.getText().toString();

@@ -53,6 +53,9 @@ public class admin_paneli extends AppCompatActivity {
                         break;
                     case 6:
                         startActivity(new Intent(admin_paneli.this, duyuru_islemleri.class));
+                        Intent intent6 = new Intent(admin_paneli.this, duyuru_islemleri.class);
+                        intent6.putExtra("email",gelenemail);
+                        startActivity(intent6);
                         break;
                     case 7:
                         startActivity(new Intent(admin_paneli.this, mesaj_islemleri.class));

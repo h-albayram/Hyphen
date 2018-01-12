@@ -6,22 +6,42 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.MultiAutoCompleteTextView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class tl_mesaj extends AppCompatActivity {
     Button cikis;
-    Button anasayfa;
+    Button anasayfa,mesajyaz;
     Spinner spnr;
+    EditText mesajkonusu,aliciemail;
+    MultiAutoCompleteTextView mesajicerigi;
     String gelenemail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tl_mesaj);
+        mesajicerigi = (MultiAutoCompleteTextView) findViewById(R.id.mlttext);
+        mesajkonusu = (EditText) findViewById(R.id.edt1);
+        aliciemail=(EditText)findViewById(R.id.alicimail);
         cikis = (Button) findViewById(R.id.cikis);
         anasayfa = (Button) findViewById(R.id.anasayfa);
         spnr = (Spinner) findViewById(R.id.spn);
-        Bundle extras = getIntent().getExtras();
-        gelenemail = extras.getString("email");
+        mesajyaz = (Button) findViewById(R.id.mesajyaz);
+        mesajyaz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle extras = getIntent().getExtras();
+                gelenemail = extras.getString("email");
+                String alicimail=aliciemail.getText().toString().trim();
+                String mesajkonus=mesajkonusu.getText().toString();
+                String mesaj=mesajicerigi.getText().toString();
+                veritabani vrtbn = new veritabani();
+                String donus=vrtbn.mesajekle(gelenemail,alicimail,mesajkonus,mesaj);
+                Toast.makeText(getApplicationContext(),donus, Toast.LENGTH_LONG).show();
+            }
+        });
 
 
         spnr.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -41,18 +61,27 @@ public class tl_mesaj extends AppCompatActivity {
 
                     case 2:
                         startActivity(new Intent(tl_mesaj.this, tl_takim.class));
+                        Intent intent1 = new Intent(tl_mesaj.this, tl_takim.class);
+                        intent1.putExtra("email",gelenemail);
+                        startActivity(intent1);
                         break;
                     case 3:
                         startActivity(new Intent(tl_mesaj.this, tl_gorev.class));
+                        Intent intent2 = new Intent(tl_mesaj.this, tl_gorev.class);
+                        intent2.putExtra("email",gelenemail);
+                        startActivity(intent2);
                         break;
                     case 4:
                         startActivity(new Intent(tl_mesaj.this, tl_duyuru.class));
+                        Intent intent3 = new Intent(tl_mesaj.this, tl_duyuru.class);
+                        intent3.putExtra("email",gelenemail);
+                        startActivity(intent3);
                         break;
                     case 5:
                         startActivity(new Intent(tl_mesaj.this, tl_mesaj.class));
-                        Intent intent1 = new Intent(tl_mesaj.this, tl_mesaj.class);
-                        intent1.putExtra("email",gelenemail);
-                        startActivity(intent1);
+                        Intent intent4 = new Intent(tl_mesaj.this, tl_mesaj.class);
+                        intent4.putExtra("email",gelenemail);
+                        startActivity(intent4);
                         break;
 
                 }

@@ -113,20 +113,21 @@ public class veritabani {
                 SoapObject tableRow = (SoapObject) table.getProperty(i);
                 uyecek uyeler = new uyecek();
                 uyeler.setId(Integer.parseInt(tableRow.getPropertyAsString("id").toString()));
-                uyeler.setSifre(""+(tableRow.getPropertyAsString("sifre").toString()));
-                uyeler.setAdi(""+tableRow.getPropertyAsString("ad").toString());
-                uyeler.setSoyadi(""+tableRow.getPropertyAsString("soyad").toString());
-                uyeler.setEmail(""+tableRow.getPropertyAsString("e_posta").toString());
-                uyeler.setDog_tarihi(""+tableRow.getPropertyAsString("dog_tar").toString());
-                uyeler.setKay_tar(""+tableRow.getPropertyAsString("kayit_tar").toString());
-                uyeler.setYetki(""+tableRow.getPropertyAsString("yetki").toString());
-             //   uyeler.setTakim(""+(tableRow.getPropertyAsString("takim_id").toString()));
+                uyeler.setSifre("" + (tableRow.getPropertyAsString("sifre").toString()));
+                uyeler.setAdi("" + tableRow.getPropertyAsString("ad").toString());
+                uyeler.setSoyadi("" + tableRow.getPropertyAsString("soyad").toString());
+                uyeler.setEmail("" + tableRow.getPropertyAsString("e_posta").toString());
+                uyeler.setDog_tarihi("" + tableRow.getPropertyAsString("dog_tar").toString());
+                uyeler.setKay_tar("" + tableRow.getPropertyAsString("kayit_tar").toString());
+                uyeler.setYetki("" + tableRow.getPropertyAsString("yetki").toString());
+                //   uyeler.setTakim(""+(tableRow.getPropertyAsString("takim_id").toString()));
                 uyecek.uyeler.add(uyeler);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     public static void profil(String email) {
         String nameSpace = "profil";
         SoapObject request = new SoapObject(NAMESPACE, nameSpace);
@@ -140,7 +141,7 @@ public class veritabani {
         androidHttpTransport.debug = true;
 
         try {
-            androidHttpTransport.call("http://microsoft.com/webservices/"+nameSpace, envelope);
+            androidHttpTransport.call("http://microsoft.com/webservices/" + nameSpace, envelope);
             SoapObject response = (SoapObject) envelope.getResponse();
             response = (SoapObject) response.getProperty(1);
             SoapObject table = (SoapObject) response.getProperty(0);
@@ -148,13 +149,13 @@ public class veritabani {
             for (int i = 0; i < table.getPropertyCount(); i++) {
                 SoapObject tableRow = (SoapObject) table.getProperty(i);
                 UyeGor uyeler = new UyeGor();
-                uyeler.setSifre(""+(tableRow.getPropertyAsString("sifre").toString()));
-                uyeler.setAdi(""+tableRow.getPropertyAsString("ad").toString());
-                uyeler.setSoyadi(""+tableRow.getPropertyAsString("soyad").toString());
-                uyeler.setEmail(""+tableRow.getPropertyAsString("e_posta").toString());
-                uyeler.setDog_tarihi(""+tableRow.getPropertyAsString("dog_tar").toString());
-                uyeler.setKay_tar(""+tableRow.getPropertyAsString("kayit_tar").toString());
-              //  uyeler.setTakim_kaytar(""+tableRow.getPropertyAsString("takim_kay_tar").toString());
+                uyeler.setSifre("" + (tableRow.getPropertyAsString("sifre").toString()));
+                uyeler.setAdi("" + tableRow.getPropertyAsString("ad").toString());
+                uyeler.setSoyadi("" + tableRow.getPropertyAsString("soyad").toString());
+                uyeler.setEmail("" + tableRow.getPropertyAsString("e_posta").toString());
+                uyeler.setDog_tarihi("" + tableRow.getPropertyAsString("dog_tar").toString());
+                uyeler.setKay_tar("" + tableRow.getPropertyAsString("kayit_tar").toString());
+                //  uyeler.setTakim_kaytar(""+tableRow.getPropertyAsString("takim_kay_tar").toString());
                 //   uyeler.setTakim(""+(tableRow.getPropertyAsString("takim_id").toString()));
                 UyeGor.listeUyeGor.add(uyeler);
             }
@@ -162,8 +163,9 @@ public class veritabani {
             e.printStackTrace();
         }
     }
+
     public String uyesil(String mail) {
-        String donus ="";
+        String donus = "";
         SoapObject request = new SoapObject(NAMESPACE, "uyesil");
 
         request.addProperty("mail", mail);
@@ -187,7 +189,8 @@ public class veritabani {
         }
         return donus;
     }
-    public String mesajekle(String gonderenemail, String aliciemail,String mesajkonusu,String mesajicerigi) {
+
+    public String mesajekle(String gonderenemail, String aliciemail, String mesajkonusu, String mesajicerigi) {
         String donus = "";
         SoapObject request = new SoapObject(NAMESPACE, "mesajekle");
 
@@ -214,5 +217,65 @@ public class veritabani {
 
         }
         return donus;
+    }
+
+    public String duyuruekle(String gonderenemail, String duyurukonusu, String duyurucerigi) {
+        String donus = "";
+        SoapObject request = new SoapObject(NAMESPACE, "duyuruekle");
+        request.addProperty("yayinlayan_mail", gonderenemail);
+        request.addProperty("duyuru_basligi", duyurukonusu);
+        request.addProperty("duyuru", duyurucerigi);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+        envelope.setOutputSoapObject(request);
+        envelope.dotNet = true;
+        HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
+        androidHttpTransport.debug = true;
+        try {
+            androidHttpTransport.call("http://microsoft.com/webservices/duyuruekle", envelope);
+            SoapPrimitive response = (SoapPrimitive) envelope.getResponse();
+            response = (SoapPrimitive) envelope.getResponse();
+
+            donus = response.toString();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+        return donus;
+    }
+
+    public static void mesajcek(String email) {
+        String nameSpace = "gelenmesaj";
+        SoapObject request = new SoapObject(NAMESPACE, nameSpace);
+        request.addProperty("mail", email);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+        envelope.setOutputSoapObject(request);
+        envelope.dotNet = true;
+        HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
+        androidHttpTransport.debug = true;
+
+        try {
+            androidHttpTransport.call("http://microsoft.com/webservices/" + nameSpace, envelope);
+            SoapObject response = (SoapObject) envelope.getResponse();
+            response = (SoapObject) response.getProperty(1);
+            SoapObject table = (SoapObject) response.getProperty(0);
+            mesajgor.mesajgorArrayList.clear();
+            for (int i = 0; i < table.getPropertyCount(); i++) {
+                SoapObject tableRow = (SoapObject) table.getProperty(i);
+                mesajgor mesaj = new mesajgor();
+                mesaj.setK_adi("" + (tableRow.getPropertyAsString("ad").toString()));
+                mesaj.setK_soyad("" + tableRow.getPropertyAsString("soyad").toString());
+                mesaj.setMesajbasligi("" + tableRow.getPropertyAsString("mesaj_konusu").toString());
+                mesaj.setMesaj("" + tableRow.getPropertyAsString("mesaj").toString());
+                mesaj.setTarih("" + tableRow.getPropertyAsString("gelme_tarihi").toString());
+                mesajgor.mesajgorArrayList.add(mesaj);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

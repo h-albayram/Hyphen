@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:text="Adi:"
+                android:text="Adi:   "
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
@@ -33,6 +33,24 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:text="Soyad"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/mesajkonusu"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="mesaj konusu"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/mesaj"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="mesaj içeriği"
+                android:layout_weight="1"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView

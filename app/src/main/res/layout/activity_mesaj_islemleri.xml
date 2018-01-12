@@ -81,7 +81,7 @@
             <ListView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/lst"></ListView>
+                android:id="@+id/lst1"></ListView>
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

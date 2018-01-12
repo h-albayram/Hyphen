@@ -28,7 +28,7 @@ public class profil extends AppCompatActivity {
         UyeGor.listeUyeGor.clear();
         Bundle extras = getIntent().getExtras();
         gelenemail = extras.getString("email");
-       String mail ="albayramidah@gmail.com";
+
         veritabani.profil(gelenemail.trim().toString());
         result.setAdapter(new profiladapter(profil.this, uye.listeUyeGor));
         spnr.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
